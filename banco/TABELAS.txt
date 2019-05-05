@@ -1,0 +1,91 @@
+create table produtos(
+codigo int primary key AUTO_INCREMENT,
+nome varchar(50) not null,
+descricao varchar (500) not null,
+img varchar(100),
+quantidade int,
+preco DECIMAL(50,2) not null,
+data date not null,
+UNIQUE KEY (codigo),
+UNIQUE KEY (nome),
+codigo_categoriaproduto int 
+);
+
+create table usuario(
+codigo int primary key AUTO_INCREMENT,
+nome char(50) not null,
+login varchar(20) not null,
+senha varchar(20) not null,
+cargo int (1) not null,
+data_cadastro date not null,
+UNIQUE kEY (login),
+UNIQUE kEY (codigo)
+);
+
+create table cliente(
+id_cliente int primary key AUTO_INCREMENT,
+nome char (50) not null,
+login varchar(50) not null,
+senha varchar(50) not null,
+data_user date not null,
+email varchar (100) not null,
+cpf int not null,
+cep int not null,
+endereco varchar (100) not null,
+sexo int not null,
+UNIQUE KEY (login),
+UNIQUE KEY (id_cliente)
+
+
+);
+Create table venda_produto(
+id_produto_venda int primary key AUTO_INCREMENT,
+id_venda int,
+id_produto int,
+UNIQUE KEY (id_produto_venda)
+
+);
+
+Create table venda (
+id_venda int primary key AUTO_INCREMENT,
+num_venda int ,
+venda_situacao varchar (50),
+forma_pagamento varchar (50),
+valor_total DECIMAL(50,2),
+id_cliente int,
+UNIQUE KEY (id_venda)
+);
+create table categoria(
+id_categoria int primary key AUTO_INCREMENT,
+id_sub_categoria int,
+nome_categoria varchar (17) not null,
+UNIQUE KEY (id_categoria),
+UNIQUE KEY (nome_categoria)
+
+);
+create table sub_categoria(
+id_sub_categoria int primary key AUTO_INCREMENT,
+nome_sub varchar (17) not null,
+UNIQUE KEY (id_sub_categoria),
+UNIQUE KEY (nome_sub)
+);
+create table cargo(
+id_cargo int primary key AUTO_INCREMENT,
+nome_cargo varchar (15),
+poder int,
+UNIQUE KEY (nome_cargo)
+);
+
+insert into cargo (id_cargo,nome_cargo,poder) values (1,'Semcargo',0);
+insert into categoria (id_categoria,nome_categoria) values (1,'SemCategoria');
+insert into usuario (nome,login,senha,id_cargo)values ('Admin','admin','admin',2) ;
+insert into cargo (nome_cargo,poder) values ('admin',10)
+
+
+
+
+select DATE_FORMAT(sysdate(), '%d/%m/%Y') as data
+LIMIT 15,2
+
+insert into categoria (nome_categoria) values ('teste')
+Stored Procedures

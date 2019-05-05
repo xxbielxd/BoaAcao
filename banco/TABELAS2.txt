@@ -1,0 +1,67 @@
+create table instituicoes
+(
+id int primary key AUTO_INCREMENT,
+login varchar(50) not null,
+senha varchar(30) not null,
+nome char(50) not null,
+email varchar(100)not null,
+endereco varchar(50) not null, 
+telefone varchar(15) not null, 
+cnpj int not null,
+atividades char(50) not null,
+foto varchar(50) not null,
+responsavel char(50) not null,
+data_criacao date not null,
+descricao varchar(500) not null,
+UNIQUE kEY (login),
+UNIQUE kEY (id)
+);
+
+
+create table colaboradores
+(
+id int primary key AUTO_INCREMENT,
+login varchar(50) not null,
+senha varchar(30) not null,
+nome char(50) not null,
+email varchar(100) not null,
+endereco varchar(50) not null,
+telefone varchar(15) not null, 
+cpf int not null,
+foto varchar(50),
+data_criacao date not null,
+nascimento varchar(50) not null,
+pontos int,
+UNIQUE kEY (login),
+UNIQUE kEY (id)
+);
+
+create table solitacoes
+(
+id int primary key AUTO_INCREMENT,
+id_colaborador int not null,
+id_instituicao int not null,
+descricao varchar(500) 
+);
+create table pontos
+(
+id_colaborador int not null,
+id_instituicao int not null,
+quantidade int not null
+);
+create table configuracoes
+(
+taxa_conversao DECIMAL(50,2)
+);
+create table login
+(
+id int primary key AUTO_INCREMENT,
+nomepc varchar(100) not null,
+nome varchar(50)not null,
+session varchar(50)not null,
+active date not null,
+id_user int,
+tipo int,
+UNIQUE KEY (session),
+UNIQUE KEY (id)
+);

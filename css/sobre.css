@@ -1,0 +1,38 @@
+@CHARSET "UTF-8";
+.missao{
+	width:240px;
+	background-color: #005700;
+	color:white;
+	margin:10px;
+	float:left;
+	height:300px;
+	padding:10px;
+	border-radius:20px;
+}
+.visao{
+	width:240px;
+	background-color: #4404af;
+	color:white;
+	border-radius:20px;
+	margin:10px;
+	float:left;
+	height:300px;
+	padding:10px;
+}
+.valores{
+	width:240px;
+	background-color: #4e6e73;
+	color:white;
+	border-radius:20px;
+	margin:10px;
+	float:left;
+	height:300px;
+	padding:10px;
+}
+.all{
+width:900px;
+margin:10px auto;
+
+
+
+}	
